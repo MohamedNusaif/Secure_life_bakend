@@ -1,13 +1,9 @@
-Copy everything below:
 
 # SecureLife Insurance PLC — CRM Backend
 
-
 REST API backend for the SecureLife Insurance PLC Customer Relationship Management (CRM) system.
 
-
 The backend provides APIs for:
-
 
 - Authentication
 - User management
@@ -18,15 +14,11 @@ The backend provides APIs for:
 - Insurance plan recommendation
 - CRM operations
 
-
 ---
-
 
 # 🚀 Project Overview
 
-
 The SecureLife CRM backend is built using:
-
 
 - Node.js
 - Express.js
@@ -35,22 +27,19 @@ The SecureLife CRM backend is built using:
 - Mongoose
 - JWT Authentication
 
-
 The backend exposes REST APIs consumed by the Next.js frontend.
-
 
 Architecture:
 
-
 ```text
 Next.js Frontend
-       ↓
+↓
 REST API
-       ↓
+↓
 Express.js
-       ↓
+↓
 Mongoose
-       ↓
+↓
 MongoDB
 ✨ Features
 Authentication
@@ -75,15 +64,15 @@ Store customer requirements
 Store recommended plans
 Lead Workflow
 NEW
- ↓
+↓
 ASSIGNED
- ↓
+↓
 CONTACTED
- ↓
+↓
 QUALIFIED
- ↓
+↓
 PROPOSAL
- ↓
+↓
 CONVERTED
 
 Alternative:
@@ -123,9 +112,8 @@ Advisor A → 8 leads
 Advisor B → 3 leads
 Advisor C → 6 leads
 
-
 New Lead
-   ↓
+↓
 Advisor B
 
 This helps distribute leads more evenly between advisors.
@@ -168,10 +156,8 @@ Example:
 Gold
 Match Score: 95%
 
-
 Premium
 Match Score: 82%
-
 
 Basic
 Match Score: 65%
@@ -189,41 +175,41 @@ CORS
 securelife-crm-backend/
 │
 ├── src/
-│   │
-│   ├── controllers/
-│   │   ├── authController.ts
-│   │   ├── leadController.ts
-│   │   ├── advisorController.ts
-│   │   ├── planController.ts
-│   │   └── userController.ts
-│   │
-│   ├── models/
-│   │   ├── User.ts
-│   │   ├── Lead.ts
-│   │   ├── Advisor.ts
-│   │   └── InsurancePlan.ts
-│   │
-│   ├── routes/
-│   │   ├── authRoutes.ts
-│   │   ├── leadRoutes.ts
-│   │   ├── advisorRoutes.ts
-│   │   ├── planRoutes.ts
-│   │   └── userRoutes.ts
-│   │
-│   ├── middleware/
-│   │   ├── authMiddleware.ts
-│   │   └── errorMiddleware.ts
-│   │
-│   ├── services/
-│   │   ├── leadAssignmentService.ts
-│   │   └── planRecommendationService.ts
-│   │
-│   ├── config/
-│   │   └── database.ts
-│   │
-│   ├── seedAdvisors.ts
-│   ├── seedPlans.ts
-│   └── server.ts
+│ │
+│ ├── controllers/
+│ │ ├── authController.ts
+│ │ ├── leadController.ts
+│ │ ├── advisorController.ts
+│ │ ├── planController.ts
+│ │ └── userController.ts
+│ │
+│ ├── models/
+│ │ ├── User.ts
+│ │ ├── Lead.ts
+│ │ ├── Advisor.ts
+│ │ └── InsurancePlan.ts
+│ │
+│ ├── routes/
+│ │ ├── authRoutes.ts
+│ │ ├── leadRoutes.ts
+│ │ ├── advisorRoutes.ts
+│ │ ├── planRoutes.ts
+│ │ └── userRoutes.ts
+│ │
+│ ├── middleware/
+│ │ ├── authMiddleware.ts
+│ │ └── errorMiddleware.ts
+│ │
+│ ├── services/
+│ │ ├── leadAssignmentService.ts
+│ │ └── planRecommendationService.ts
+│ │
+│ ├── config/
+│ │ └── database.ts
+│ │
+│ ├── seedAdvisors.ts
+│ ├── seedPlans.ts
+│ └── server.ts
 │
 ├── .env
 ├── .env.example
@@ -276,15 +262,11 @@ Example:
 
 PORT=5000
 
-
-MONGODB_URI=mongodb://127.0.0.1:27017/securelife_crm
-
+MONGODB_URI=mongodb+srv://mrmnusaif_db_user:fPIGbR8qEHj0Qgv0@cluster0.mcnpzja.mongodb.net/
 
 JWT_SECRET=change_this_to_a_secure_secret
 
-
 FRONTEND_URL=http://localhost:3000
-
 
 NODE_ENV=development
 
@@ -352,10 +334,10 @@ POST /api/auth/register
 Example:
 
 {
-  "name": "Admin User",
-  "email": "admin@securelife.lk",
-  "password": "Admin@123",
-  "role": "ADMIN"
+"name": "Admin User",
+"email": "admin@securelife.lk",
+"password": "Admin@123",
+"role": "ADMIN"
 }
 Login
 POST /api/auth/login
@@ -363,26 +345,26 @@ POST /api/auth/login
 Example:
 
 {
-  "email": "admin@securelife.lk",
-  "password": "Admin@123"
+"email": "admin@securelife.lk",
+"password": "Admin@123"
 }
 
 Response:
 
 {
-  "token": "JWT_TOKEN",
-  "user": {
-    "id": "...",
-    "name": "Admin User",
-    "email": "admin@securelife.lk",
-    "role": "ADMIN"
-  }
+"token": "JWT_TOKEN",
+"user": {
+"id": "...",
+"name": "Admin User",
+"email": "admin@securelife.lk",
+"role": "ADMIN"
+}
 }
 👥 User API
-GET    /api/users
-GET    /api/users/:id
-POST   /api/users
-PUT    /api/users/:id
+GET /api/users
+GET /api/users/:id
+POST /api/users
+PUT /api/users/:id
 DELETE /api/users/:id
 📋 Lead API
 Create Lead
@@ -391,14 +373,14 @@ POST /api/leads
 Example:
 
 {
-  "name": "Mohamed Nusaif",
-  "email": "customer@example.com",
-  "phone": "0775555555",
-  "age": 30,
-  "annualIncome": 2000000,
-  "desiredCoverage": 10000000,
-  "policyTerm": 20,
-  "message": "Interested in family protection."
+"name": "Mohamed Nusaif",
+"email": "customer@example.com",
+"phone": "0775555555",
+"age": 30,
+"annualIncome": 2000000,
+"desiredCoverage": 10000000,
+"policyTerm": 20,
+"message": "Interested in family protection."
 }
 Get Leads
 GET /api/leads
@@ -410,7 +392,7 @@ PUT /api/leads/:id
 Example:
 
 {
-  "status": "CONTACTED"
+"status": "CONTACTED"
 }
 Assign Lead
 PUT /api/leads/:id/assign
@@ -418,7 +400,7 @@ PUT /api/leads/:id/assign
 Example:
 
 {
-  "advisorId": "ADVISOR_ID"
+"advisorId": "ADVISOR_ID"
 }
 Delete Lead
 DELETE /api/leads/:id
@@ -441,26 +423,25 @@ Statistics
 Example:
 
 {
-  "advisor": {
-    "name": "Sarah Fernando",
-    "employeeId": "ADV002",
-    "email": "sarah@securelife.lk",
-    "phone": "0722222222",
-    "specialization": "Family Protection",
-    "active": true,
-    "maxLeads": 20,
-    "currentLeadCount": 7
-  },
+"advisor": {
+"name": "Sarah Fernando",
+"employeeId": "ADV002",
+"email": "sarah@securelife.lk",
+"phone": "0722222222",
+"specialization": "Family Protection",
+"active": true,
+"maxLeads": 20,
+"currentLeadCount": 7
+},
 
-
-  "statistics": {
-    "totalLeads": 7,
-    "newLeads": 1,
-    "contactedLeads": 2,
-    "qualifiedLeads": 2,
-    "convertedLeads": 1,
-    "lostLeads": 1
-  }
+"statistics": {
+"totalLeads": 7,
+"newLeads": 1,
+"contactedLeads": 2,
+"qualifiedLeads": 2,
+"convertedLeads": 1,
+"lostLeads": 1
+}
 }
 Create Advisor
 POST /api/advisors
@@ -468,13 +449,13 @@ POST /api/advisors
 Example:
 
 {
-  "name": "Kasun Perera",
-  "email": "kasun@securelife.lk",
-  "phone": "0711111111",
-  "employeeId": "ADV001",
-  "specialization": "Life Insurance",
-  "maxLeads": 20,
-  "active": true
+"name": "Kasun Perera",
+"email": "kasun@securelife.lk",
+"phone": "0711111111",
+"employeeId": "ADV001",
+"specialization": "Life Insurance",
+"maxLeads": 20,
+"active": true
 }
 Update Advisor
 PUT /api/advisors/:id
@@ -482,8 +463,8 @@ PUT /api/advisors/:id
 Example:
 
 {
-  "specialization": "Family Protection",
-  "maxLeads": 25
+"specialization": "Family Protection",
+"maxLeads": 25
 }
 Deactivate Advisor
 PUT /api/advisors/:id
@@ -491,7 +472,7 @@ PUT /api/advisors/:id
 Example:
 
 {
-  "active": false
+"active": false
 }
 
 Inactive advisors will not receive new automatically assigned leads.
@@ -512,19 +493,19 @@ POST /api/plans
 Example:
 
 {
-  "name": "Gold",
-  "description": "Comprehensive family protection plan",
-  "coverageAmount": 10000000,
-  "premium": 25000,
-  "policyTerm": 20,
-  "minimumAge": 25,
-  "maximumAge": 55,
-  "benefits": [
-    "Life coverage",
-    "Family protection",
-    "Critical illness benefit"
-  ],
-  "active": true
+"name": "Gold",
+"description": "Comprehensive family protection plan",
+"coverageAmount": 10000000,
+"premium": 25000,
+"policyTerm": 20,
+"minimumAge": 25,
+"maximumAge": 55,
+"benefits": [
+"Life coverage",
+"Family protection",
+"Critical illness benefit"
+],
+"active": true
 }
 Update Plan
 PUT /api/plans/:id
@@ -535,21 +516,21 @@ DELETE /api/plans/:id
 When a customer submits a lead:
 
 POST /api/leads
-        ↓
+↓
 Validate customer information
-        ↓
+↓
 Find matching insurance plans
-        ↓
+↓
 Calculate recommendation score
-        ↓
+↓
 Find available advisor
-        ↓
+↓
 Assign lead
-        ↓
+↓
 Increase advisor lead count
-        ↓
+↓
 Save lead
-        ↓
+↓
 Return result
 🔄 Advisor Assignment Logic
 
@@ -567,12 +548,11 @@ currentLeadCount ASC
 
 Example:
 
-Advisor             Leads
+Advisor Leads
 
-
-Kasun                8
-Sarah                3
-Dinesh               6
+Kasun 8
+Sarah 3
+Dinesh 6
 
 New lead:
 
@@ -580,9 +560,9 @@ Sarah
 
 After assignment:
 
-Kasun                8
-Sarah                4
-Dinesh               6
+Kasun 8
+Sarah 4
+Dinesh 6
 🌱 Seed Data
 
 The backend includes seed scripts for development.
@@ -600,10 +580,8 @@ Example advisors:
 ADV001
 Kasun Perera
 
-
 ADV002
 Sarah Fernando
-
 
 ADV003
 Dinesh Kumar
@@ -646,37 +624,30 @@ advisors
 insuranceplans
 📊 Lead Document Example
 {
-  "_id": "LEAD_ID",
+"_id": "LEAD_ID",
 
+"name": "Mohamed Nusaif",
 
-  "name": "Mohamed Nusaif",
+"email": "customer@example.com",
 
+"phone": "0775555555",
 
-  "email": "customer@example.com",
+"status": "ASSIGNED",
 
+"assignedAdvisor": {
+"advisorId": "ADVISOR_ID",
+"name": "Sarah Fernando",
+"email": "sarah@securelife.lk"
+},
 
-  "phone": "0775555555",
+"assignedAt": "2026-08-15T00:00:00.000Z",
 
-
-  "status": "ASSIGNED",
-
-
-  "assignedAdvisor": {
-    "advisorId": "ADVISOR_ID",
-    "name": "Sarah Fernando",
-    "email": "sarah@securelife.lk"
-  },
-
-
-  "assignedAt": "2026-08-15T00:00:00.000Z",
-
-
-  "recommendedPlans": [
-    {
-      "planName": "Gold",
-      "matchScore": 95
-    }
-  ]
+"recommendedPlans": [
+{
+"planName": "Gold",
+"matchScore": 95
+}
+]
 }
 🛡️ Security Practices
 
@@ -727,38 +698,34 @@ Production environment example:
 
 PORT=5000
 
-
 MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster.mongodb.net/securelife_crm
-
 
 JWT_SECRET=YOUR_SECURE_RANDOM_SECRET
 
-
 FRONTEND_URL=https://your-frontend-domain.com
-
 
 NODE_ENV=production
 🌍 Production Architecture
-                    Internet
-                       │
-                       ▼
-             ┌──────────────────┐
-             │ Next.js Frontend  │
-             │     Vercel        │
-             └────────┬─────────┘
-                      │
-                      │ HTTPS
-                      ▼
-             ┌──────────────────┐
-             │ Express Backend  │
-             │     Render       │
-             └────────┬─────────┘
-                      │
-                      │ MongoDB Driver
-                      ▼
-             ┌──────────────────┐
-             │  MongoDB Atlas   │
-             └──────────────────┘
+Internet
+│
+▼
+┌──────────────────┐
+│ Next.js Frontend │
+│ Vercel │
+└────────┬─────────┘
+│
+│ HTTPS
+▼
+┌──────────────────┐
+│ Express Backend │
+│ Render │
+└────────┬─────────┘
+│
+│ MongoDB Driver
+▼
+┌──────────────────┐
+│ MongoDB Atlas │
+└──────────────────┘
 🧪 Production Checklist
 
 Before deployment:
@@ -818,3 +785,696 @@ API integration
 📄 License
 
 This project was created for educational and internship evaluation purposes.
+
+trim bit and all in one copyable format
+
+# SecureLife Insurance PLC — CRM Backend
+
+
+REST API backend for the SecureLife Insurance PLC Customer Relationship Management (CRM) system.
+
+
+## 🚀 Overview
+
+
+The backend provides APIs for:
+
+
+- Authentication & JWT authorization
+- User management
+- Lead management
+- Advisor management
+- Insurance plan management
+- Automatic advisor assignment
+- Insurance plan recommendation
+- CRM operations
+
+
+### Technology Stack
+
+
+- Node.js
+- Express.js
+- TypeScript
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+- dotenv
+- CORS
+
+
+### Architecture
+
+
+```text
+Next.js Frontend
+       ↓
+REST API
+       ↓
+Express.js
+       ↓
+Mongoose
+       ↓
+MongoDB
+✨ Features
+Authentication
+User registration
+User login
+JWT authentication
+Protected routes
+Role-based access
+Lead Management
+Create, view, update and delete leads
+Assign advisors
+Track lead status
+Track follow-up dates
+Store customer requirements
+Store recommended insurance plans
+Lead Workflow
+NEW
+ ↓
+ASSIGNED
+ ↓
+CONTACTED
+ ↓
+QUALIFIED
+ ↓
+PROPOSAL
+ ↓
+CONVERTED
+
+Alternative status:
+
+LOST
+Advisor Management
+Create advisors
+View advisors
+View active advisors
+View advisor details
+Update advisors
+Deactivate advisors
+Delete advisors when permitted
+View assigned leads
+Track advisor workload and capacity
+🤖 Automatic Advisor Assignment
+
+When a new lead is created, the system can automatically assign it to an available advisor.
+
+The system checks:
+
+active = true
+currentLeadCount < maxLeads
+
+The advisor with the lowest workload is selected.
+
+Example:
+
+Advisor A → 8 leads
+Advisor B → 3 leads
+Advisor C → 6 leads
+
+
+New Lead → Advisor B
+
+This helps distribute leads evenly between advisors.
+
+🛡️ Insurance Plan Management
+
+Plans can contain:
+
+Plan name
+Description
+Coverage amount
+Premium
+Policy term
+Minimum age
+Maximum age
+Benefits
+Eligibility criteria
+Active status
+🎯 Plan Recommendation
+
+Customer requirements are evaluated against available insurance plans.
+
+Example:
+
+Age: 30
+Desired Coverage: 10,000,000
+Policy Term: 20 years
+Annual Income: 2,000,000
+
+Example recommendation:
+
+Gold     → 95%
+Premium  → 82%
+Basic    → 65%
+📁 Project Structure
+securelife-crm-backend/
+│
+├── src/
+│   ├── controllers/
+│   │   ├── authController.ts
+│   │   ├── leadController.ts
+│   │   ├── advisorController.ts
+│   │   ├── planController.ts
+│   │   └── userController.ts
+│   │
+│   ├── models/
+│   │   ├── User.ts
+│   │   ├── Lead.ts
+│   │   ├── Advisor.ts
+│   │   └── InsurancePlan.ts
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.ts
+│   │   ├── leadRoutes.ts
+│   │   ├── advisorRoutes.ts
+│   │   ├── planRoutes.ts
+│   │   └── userRoutes.ts
+│   │
+│   ├── middleware/
+│   │   ├── authMiddleware.ts
+│   │   └── errorMiddleware.ts
+│   │
+│   ├── services/
+│   │   ├── leadAssignmentService.ts
+│   │   └── planRecommendationService.ts
+│   │
+│   ├── config/
+│   │   └── database.ts
+│   │
+│   ├── seedAdvisors.ts
+│   ├── seedPlans.ts
+│   └── server.ts
+│
+├── .env
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
+⚙️ Requirements
+
+Install:
+
+Node.js 20+
+npm
+MongoDB
+Git
+
+MongoDB can be either:
+
+MongoDB Atlas
+Local MongoDB
+
+Check versions:
+
+node -v
+npm -v
+📥 Installation
+
+Clone the repository:
+
+git clone https://github.com/YOUR_USERNAME/securelife-crm-backend.git
+
+Move into the project:
+
+cd securelife-crm-backend
+
+Install dependencies:
+
+npm install
+🔐 Environment Variables
+
+Create a .env file:
+
+PORT=5000
+
+
+MONGODB_URI=mongodb://127.0.0.1:27017/securelife_crm
+
+
+JWT_SECRET=change_this_to_a_secure_secret
+
+
+FRONTEND_URL=http://localhost:3000
+
+
+NODE_ENV=development
+
+For MongoDB Atlas:
+
+MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster.mongodb.net/securelife_crm
+Security
+
+Never commit .env to GitHub.
+
+.gitignore should contain:
+
+node_modules
+dist
+.env
+.env.local
+*.log
+
+Use .env.example to document required environment variables without exposing secrets.
+
+▶️ Development
+
+Start the backend:
+
+npm run dev
+
+Local server:
+
+http://localhost:5000
+🏗️ Production Build
+
+Build the TypeScript project:
+
+npm run build
+
+Start production server:
+
+npm start
+
+Expected output:
+
+dist/server.js
+📡 API
+Base URL
+
+Local:
+
+http://localhost:5000/api
+
+Production:
+
+https://your-backend-domain.com/api
+🔑 Authentication
+Register
+POST /api/auth/register
+
+Example:
+
+{
+  "name": "Admin User",
+  "email": "admin@securelife.lk",
+  "password": "Admin@123",
+  "role": "ADMIN"
+}
+Login
+POST /api/auth/login
+
+Example:
+
+{
+  "email": "admin@securelife.lk",
+  "password": "Admin@123"
+}
+
+Response:
+
+{
+  "token": "JWT_TOKEN",
+  "user": {
+    "id": "...",
+    "name": "Admin User",
+    "email": "admin@securelife.lk",
+    "role": "ADMIN"
+  }
+}
+👥 User API
+GET    /api/users
+GET    /api/users/:id
+POST   /api/users
+PUT    /api/users/:id
+DELETE /api/users/:id
+📋 Lead API
+Create Lead
+POST /api/leads
+
+Example:
+
+{
+  "name": "Mohamed Nusaif",
+  "email": "customer@example.com",
+  "phone": "0775555555",
+  "age": 30,
+  "annualIncome": 2000000,
+  "desiredCoverage": 10000000,
+  "policyTerm": 20,
+  "message": "Interested in family protection."
+}
+Other Lead Endpoints
+GET    /api/leads
+GET    /api/leads/:id
+PUT    /api/leads/:id
+DELETE /api/leads/:id
+PUT    /api/leads/:id/assign
+
+Update status:
+
+{
+  "status": "CONTACTED"
+}
+
+Manual advisor assignment:
+
+{
+  "advisorId": "ADVISOR_ID"
+}
+👨‍💼 Advisor API
+Endpoints
+GET    /api/advisors
+GET    /api/advisors/active
+GET    /api/advisors/:id
+POST   /api/advisors
+PUT    /api/advisors/:id
+DELETE /api/advisors/:id
+Create Advisor
+{
+  "name": "Kasun Perera",
+  "email": "kasun@securelife.lk",
+  "phone": "0711111111",
+  "employeeId": "ADV001",
+  "specialization": "Life Insurance",
+  "maxLeads": 20,
+  "active": true
+}
+Advisor Details
+
+The advisor details endpoint can return advisor information, assigned leads and workload statistics.
+
+Example:
+
+{
+  "advisor": {
+    "name": "Sarah Fernando",
+    "employeeId": "ADV002",
+    "email": "sarah@securelife.lk",
+    "phone": "0722222222",
+    "specialization": "Family Protection",
+    "active": true,
+    "maxLeads": 20,
+    "currentLeadCount": 7
+  },
+  "statistics": {
+    "totalLeads": 7,
+    "newLeads": 1,
+    "contactedLeads": 2,
+    "qualifiedLeads": 2,
+    "convertedLeads": 1,
+    "lostLeads": 1
+  }
+}
+Update Advisor
+{
+  "specialization": "Family Protection",
+  "maxLeads": 25
+}
+
+Deactivate:
+
+{
+  "active": false
+}
+
+Inactive advisors will not receive automatically assigned leads.
+
+Advisors with assigned leads should not be deleted.
+
+🛡️ Insurance Plan API
+GET    /api/plans
+GET    /api/plans/:id
+POST   /api/plans
+PUT    /api/plans/:id
+DELETE /api/plans/:id
+Create Plan
+{
+  "name": "Gold",
+  "description": "Comprehensive family protection plan",
+  "coverageAmount": 10000000,
+  "premium": 25000,
+  "policyTerm": 20,
+  "minimumAge": 25,
+  "maximumAge": 55,
+  "benefits": [
+    "Life coverage",
+    "Family protection",
+    "Critical illness benefit"
+  ],
+  "active": true
+}
+🧠 Automatic Lead Processing
+
+When a customer creates a lead:
+
+POST /api/leads
+       ↓
+Validate customer information
+       ↓
+Find matching insurance plans
+       ↓
+Calculate recommendation score
+       ↓
+Find available advisor
+       ↓
+Assign advisor
+       ↓
+Update advisor workload
+       ↓
+Save lead
+       ↓
+Return result
+Advisor Assignment Logic
+
+Available advisors must satisfy:
+
+active = true
+currentLeadCount < maxLeads
+
+The system then selects the advisor with the lowest currentLeadCount.
+
+Example:
+
+Kasun   → 8 leads
+Sarah   → 3 leads
+Dinesh  → 6 leads
+
+
+New Lead → Sarah
+
+
+Kasun   → 8 leads
+Sarah   → 4 leads
+Dinesh  → 6 leads
+🌱 Seed Data
+
+Seed advisors:
+
+npx tsx src/seedAdvisors.ts
+
+Seed insurance plans:
+
+npx tsx src/seedPlans.ts
+
+Example advisors:
+
+ADV001 → Kasun Perera
+ADV002 → Sarah Fernando
+ADV003 → Dinesh Kumar
+🧪 Postman Testing
+
+Recommended testing order:
+
+Register user
+Login
+Copy JWT token
+Create insurance plans
+Create advisors
+Get advisors
+Create lead
+Verify automatic advisor assignment
+Get leads
+Get advisor details
+Manually reassign a lead
+Update lead status
+Authorization
+
+For protected endpoints:
+
+Authorization
+→ Bearer Token
+→ JWT_TOKEN
+
+Example:
+
+Bearer eyJhbGciOiJIUzI1NiIs...
+🗃️ MongoDB Collections
+
+The application uses collections such as:
+
+users
+leads
+advisors
+insuranceplans
+Lead Document Example
+{
+  "_id": "LEAD_ID",
+  "name": "Mohamed Nusaif",
+  "email": "customer@example.com",
+  "phone": "0775555555",
+  "status": "ASSIGNED",
+  "assignedAdvisor": {
+    "advisorId": "ADVISOR_ID",
+    "name": "Sarah Fernando",
+    "email": "sarah@securelife.lk"
+  },
+  "assignedAt": "2026-08-15T00:00:00.000Z",
+  "recommendedPlans": [
+    {
+      "planName": "Gold",
+      "matchScore": 95
+    }
+  ]
+}
+🛡️ Security
+
+The backend uses or supports:
+
+JWT authentication
+Password hashing with bcrypt
+Environment variables
+CORS configuration
+Input validation
+Role-based authorization
+Protected API endpoints
+MongoDB schema validation
+Centralized error handling
+No secrets committed to GitHub
+🌐 Frontend Integration
+
+Frontend repository:
+
+securelife-crm-frontend
+
+Local frontend:
+
+http://localhost:3000
+
+Local backend:
+
+http://localhost:5000
+
+API:
+
+http://localhost:5000/api
+🚀 Deployment
+
+The backend can be deployed to:
+
+Render
+Railway
+AWS EC2
+Google Cloud
+Azure
+
+MongoDB can be hosted using MongoDB Atlas.
+
+Production Environment
+PORT=5000
+
+
+MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@cluster.mongodb.net/securelife_crm
+
+
+JWT_SECRET=YOUR_SECURE_RANDOM_SECRET
+
+
+FRONTEND_URL=https://your-frontend-domain.com
+
+
+NODE_ENV=production
+Production Architecture
+                    Internet
+                       │
+                       ▼
+             ┌──────────────────┐
+             │ Next.js Frontend │
+             │     Vercel       │
+             └────────┬─────────┘
+                      │
+                      │ HTTPS
+                      ▼
+             ┌──────────────────┐
+             │ Express Backend │
+             │     Render      │
+             └────────┬─────────┘
+                      │
+                      │ MongoDB Driver
+                      ▼
+             ┌──────────────────┐
+             │  MongoDB Atlas  │
+             └──────────────────┘
+🧪 Production Checklist
+
+Before deployment:
+
+ Configure production environment variables
+ Generate secure JWT secret
+ Configure MongoDB Atlas
+ Configure CORS
+ Test authentication
+ Test lead creation
+ Test advisor assignment
+ Test plan recommendation
+ Test CRUD endpoints
+ Test error handling
+ Test frontend/backend integration
+📈 Future Improvements
+
+Possible improvements:
+
+Redis caching
+Advanced lead scoring
+AI-powered recommendations
+Email and SMS notifications
+Advisor performance analytics
+Audit logging
+Activity history
+Automated follow-up reminders
+Appointment management
+Document uploads
+Policy enrollment workflow
+Payment integration
+Advanced reporting
+Docker
+CI/CD pipeline
+👨‍💻 Development
+
+This project was developed as an IT internship assignment for:
+
+SecureLife Insurance PLC
+
+The backend demonstrates:
+
+REST API development
+Express.js
+TypeScript
+MongoDB & Mongoose
+JWT authentication
+CRM business logic
+Lead management
+Advisor management
+Insurance plan management
+Automatic advisor assignment
+Plan recommendation
+API integration
+📄 License
+
+This project was created for educational and internship evaluation purposes.
+
+
